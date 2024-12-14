@@ -29,7 +29,7 @@ $(document).ready(function () {
 });
 
 function checkLoginStatus() {
-    const loggedInUser = sessionStorage.getItem('user');
+    const loggedInUser = sessionStorage.getItem('loggedInUser');
     
     // Nếu đã có thông tin đăng nhập, hiển thị thông tin người dùng
     if (loggedInUser) {
