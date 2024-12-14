@@ -29,10 +29,13 @@ $(document).ready(function () {
 });
 
 function checkLoginStatus() {
-    const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+    const loggedInUser = sessionStorage.getItem('user');
+    
     // Nếu đã có thông tin đăng nhập, hiển thị thông tin người dùng
     if (loggedInUser) {
-        document.getElementById('header-content').innerText = `Hi, ${loggedInUser.email}!`;
+        const email = JSON.parse(loggedInUser);
+        console.log('email: ',email)
+        document.getElementById('header-content').innerText = `Hi, ${email}!`;
         document.getElementById('login-btn').style.display = 'none'; // Ẩn nút login
     }
 }        
