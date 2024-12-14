@@ -38,7 +38,6 @@ $(document).ready(function () {
             
             // Lưu thông tin vào sessionStorage
             sessionStorage.setItem('loggedInUser', JSON.stringify({ email: user.email }));
-            
             // Chuyển hướng sau khi đăng nhập thành công
             window.location.href = 'index.html'; 
         } else {

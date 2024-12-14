@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
   $('.testimonials').slick({
     arrow: true,
     infinite: true,
@@ -27,6 +28,18 @@ $(document).ready(function () {
   });
 });
 
+function checkLoginStatus() {
+    const loggedInUser = sessionStorage.getItem('loggedInUser');
+    
+    // Nếu đã có thông tin đăng nhập, hiển thị thông tin người dùng
+    if (loggedInUser) {
+        document.getElementById('header-content').innerText = `Hi, ${loggedInUser.email}!`;
+        document.getElementById('login-btn').style.display = 'none'; // Ẩn nút login
+    }
+}        
+
+
+window.addEventListener('load', checkLoginStatus);
 // Hàm lưu danh sách sản phẩm vào LocalStorage nếu chưa có
 function saveProductsToLocalStorage() {
   // Kiểm tra xem danh sách sản phẩm đã tồn tại trong LocalStorage chưa
