@@ -29,7 +29,7 @@ $(document).ready(function () {
 });
 
 function checkLoginStatus() {
-    const storedUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+    const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
     // Nếu đã có thông tin đăng nhập, hiển thị thông tin người dùng
     if (loggedInUser) {
         document.getElementById('header-content').innerText = `Hi, ${loggedInUser.email}!`;
