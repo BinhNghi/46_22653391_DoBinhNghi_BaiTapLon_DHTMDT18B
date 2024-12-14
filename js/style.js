@@ -33,9 +33,9 @@ function checkLoginStatus() {
     
     // Nếu đã có thông tin đăng nhập, hiển thị thông tin người dùng
     if (loggedInUser) {
-        const email = JSON.parse(loggedInUser);
+        const user = JSON.parse(loggedInUser);
         console.log('email: ',email)
-        document.getElementById('header-content').innerText = `Hi, ${email}!`;
+        document.getElementById('header-content').innerText = `Hi, ${user.email}!`;
         document.getElementById('login-btn').style.display = 'none'; // Ẩn nút login
     }
 }        
